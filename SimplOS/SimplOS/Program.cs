@@ -1,26 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
 using System.IO;
-
 using SimplOS.Cpu;
 using SimplOS.Memory;
+using System.Collections.Generic;
 
 namespace SimplOS
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            if (args.Length < 2 || !File.Exists("input.txt"))
+            string programCard;
+            if (args.Length < 2 && !File.Exists("input.txt"))
             {
                 Console.WriteLine("Usage :\nSimplOS filename.txt");
                 return;
             }
-            Processor Cpu = new Processor();
-            MainMemory Ram = new MainMemory();
+            else
+            {
+                if (File.Exists("input.txt"))
+                {
+                    programCard = "input.txt";
+                }
+                else
+                {
+                    programCard = args[1];
+                }
+            }
+            var cpu = new Processor();
+            var ram = new MainMemory();
+
         }
     }
 }
