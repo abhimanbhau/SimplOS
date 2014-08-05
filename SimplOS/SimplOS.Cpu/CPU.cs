@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimplOS
+namespace SimplOS.Cpu
 {
-    class Program
+    public class Cpu
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

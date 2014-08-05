@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimplOS
+namespace SimplOS.Memory
 {
-    class Program
+    public class Memory
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
