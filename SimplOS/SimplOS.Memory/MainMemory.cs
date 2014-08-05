@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimplOS.Memory
 {
-    public class Memory
+    public class MainMemory
     {
     }
 }

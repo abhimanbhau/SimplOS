@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimplOS.Cpu
 {
-    public class Cpu
+    public class Processor
     {
     }
 }
