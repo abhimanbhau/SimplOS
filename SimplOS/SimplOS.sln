@@ -4,6 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplOS", "SimplOS\SimplOS.csproj", "{B614DE7D-F08E-479B-AB0C-FA49C2DFBB99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{040C339B-F24E-4543-9DA8-00F4885B97B9} = {040C339B-F24E-4543-9DA8-00F4885B97B9}
+		{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC} = {F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplOS.Cpu", "SimplOS.Cpu\SimplOS.Cpu.csproj", "{040C339B-F24E-4543-9DA8-00F4885B97B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplOS.Memory", "SimplOS.Memory\SimplOS.Memory.csproj", "{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,14 @@ Global
 		{B614DE7D-F08E-479B-AB0C-FA49C2DFBB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B614DE7D-F08E-479B-AB0C-FA49C2DFBB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B614DE7D-F08E-479B-AB0C-FA49C2DFBB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040C339B-F24E-4543-9DA8-00F4885B97B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040C339B-F24E-4543-9DA8-00F4885B97B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040C339B-F24E-4543-9DA8-00F4885B97B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040C339B-F24E-4543-9DA8-00F4885B97B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1060EC7-58EC-4E4C-B1F0-53C8A9AB78BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
