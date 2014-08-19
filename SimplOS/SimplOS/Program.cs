@@ -1,36 +1,81 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using SimplOS.Cpu;
-using SimplOS.Memory;
-using System.Collections.Generic;
+using SimplOS.Log;
 
 namespace SimplOS
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main(String[] args)
         {
-            string programCard;
-            if (args.Length < 2 && !File.Exists("input.txt"))
+            var sw = new Stopwatch();
+            sw.Start();
+            var memoryIndex = 0;
+            var currentProgramCardOwner = 9999;
+            var programCardNumber = 0;
+            var jobId = 999;
+
+            if (args.Length < 1 && !File.Exists("input.txt"))
             {
-                Console.WriteLine("Usage :\nSimplOS filename.txt");
+                Console.WriteLine("Usage :\nSimplOS filename.txt\n");
                 return;
             }
-            else
+            var programCard = File.Exists("input.txt") ? "input.txt" : args[0];
+            if (!Directory.Exists("Log"))
             {
-                if (File.Exists("input.txt"))
+                Directory.CreateDirectory("Log");
+            }
+            var logger = new Logger("Log/" + "SimplOS.main.txt");
+            var cpu = new Processor();
+
+            var buffer = File.ReadAllLines(programCard);
+            logger.LogD("Start");
+            logger.LogD("Reading Program Card From -> " + programCard);
+
+            var inputStream = new StreamReader(programCard);
+            try
+            {
+                string currentLine;
+                while ((currentLine = inputStream.ReadLine()) != null)
                 {
-                    programCard = "input.txt";
-                }
-                else
-                {
-                    programCard = args[1];
+                    if (currentLine.StartsWith("$AMJ"))
+                    {
+                        programCardNumber++;
+                        currentProgramCardOwner = Convert.ToInt16(currentLine.Substring(4, 2));
+                        jobId = Convert.ToInt16(currentLine.Substring(6, 2));
+                        logger.LogD("Processing Program Card - " + programCardNumber + " -Control -> " + "Roll Number: " +
+                            currentProgramCardOwner + ", Job-ID: " + jobId + " ,Number of Instructions: "
+                            + currentLine.Substring(8, 2) + " ,Length of Data: " + currentLine.Substring(10, 2));
+                        memoryIndex = 0;
+                    }
+                    else if (currentLine.StartsWith("$DTA"))
+                    {
+                        logger.LogD("Processing Program Card - " + programCardNumber + " -Data");
+                        cpu.StartExecution(programCardNumber, ref  inputStream, currentProgramCardOwner, jobId);
+                    }
+                    else if (currentLine.StartsWith("$END"))
+                    {
+                        logger.LogD("Processing Program Card - " + programCardNumber + " -End");
+                    }
+                    else
+                    {
+                        cpu.Ram.Gd(memoryIndex, currentLine);
+                        memoryIndex += 10;
+                    }
                 }
             }
-            var cpu = new Processor();
-            var ram = new MainMemory();
-
+            catch (Exception e)
+            {
+                logger.LogE("FATAL EXCEPTION - > " + e.Message + "\n" + e.StackTrace);
+            }
+            sw.Stop();
+            logger.LogD("End");
+            logger.LogD(programCardNumber + " Program cards processed in " +sw.ElapsedMilliseconds + " MilliSeconds" );
+            logger.LogD((double)sw.ElapsedMilliseconds/programCardNumber + " MilliSeconds/Card");
+            logger.Finish();
         }
     }
 }

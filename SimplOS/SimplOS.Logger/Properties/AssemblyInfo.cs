@@ -4,25 +4,22 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-
-[assembly: AssemblyTitle("SimplOS")]
-[assembly: AssemblyDescription("OS Simulation Program")]
+[assembly: AssemblyTitle("SimplOS.Logger")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Abhimanbhau  Kolte SoftWorks")]
-[assembly: AssemblyProduct("SimplOS")]
-[assembly: AssemblyCopyright("Copyright Abhimanbhau Kolte ©  2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SimplOS.Logger")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
-
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-
-[assembly: Guid("4bcc8a1b-5475-489d-94a7-f17fb9d1244b")]
+[assembly: Guid("641e7f98-4bb6-4eb5-85a7-2578242a9b2d")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,6 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B614DE7D-F08E-479B-AB0C-FA49C2DFBB99}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{39BDCD33-7BE6-4944-B42B-55F675271D78}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimplOS</RootNamespace>
-    <AssemblyName>SimplOS</AssemblyName>
+    <RootNamespace>SimplOS.Log</RootNamespace>
+    <AssemblyName>SimplOS.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,25 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SimplOS.Cpu\SimplOS.Cpu.csproj">
-      <Project>{040c339b-f24e-4543-9da8-00f4885b97b9}</Project>
-      <Name>SimplOS.Cpu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SimplOS.Logger\SimplOS.Logger.csproj">
-      <Project>{39bdcd33-7be6-4944-b42b-55f675271d78}</Project>
-      <Name>SimplOS.Logger</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SimplOS.Memory\SimplOS.Memory.csproj">
-      <Project>{f1060ec7-58ec-4e4c-b1f0-53c8a9ab78bc}</Project>
-      <Name>SimplOS.Memory</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

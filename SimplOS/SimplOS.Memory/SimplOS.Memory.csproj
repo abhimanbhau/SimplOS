@@ -42,6 +42,12 @@
     <Compile Include="MainMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimplOS.Logger\SimplOS.Logger.csproj">
+      <Project>{39bdcd33-7be6-4944-b42b-55f675271d78}</Project>
+      <Name>SimplOS.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
