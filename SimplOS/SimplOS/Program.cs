@@ -73,8 +73,8 @@ namespace SimplOS
             }
             sw.Stop();
             logger.LogD("End");
-            logger.LogD(programCardNumber + " Program cards processed in " +sw.ElapsedMilliseconds + " MilliSeconds" );
-            logger.LogD((double)sw.ElapsedMilliseconds/programCardNumber + " MilliSeconds/Card");
+            logger.LogD(programCardNumber + " Program cards processed in " + sw.ElapsedMilliseconds + " MilliSeconds");
+            logger.LogD((double)sw.ElapsedMilliseconds / programCardNumber + " MilliSeconds/Card");
             logger.Finish();
         }
     }
