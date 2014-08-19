@@ -6,9 +6,10 @@ namespace SimplOS.Log
     public class Logger
     {
         private readonly StreamWriter _writer;
+
         public Logger(string path)
         {
-            _writer = new StreamWriter(path) {AutoFlush = true, NewLine= Environment.NewLine};
+            _writer = new StreamWriter(path) {AutoFlush = true, NewLine = Environment.NewLine};
         }
 
         public void LogD(string d)
@@ -24,7 +25,10 @@ namespace SimplOS.Log
         public void Finish()
         {
             if (_writer != null)
-            { _writer.Flush(); _writer.Close(); }
+            {
+                _writer.Flush();
+                _writer.Close();
+            }
         }
     }
 }

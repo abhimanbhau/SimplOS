@@ -7,18 +7,21 @@ namespace SimplOS.Cpu
 {
     public class Processor
     {
+        private readonly Logger _logger =
+            new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" +
+                       DateTime.UtcNow.Second + @"\" + "SimplOS.CPU.txt");
+
         private readonly StreamWriter _output = new StreamWriter("output.txt");
         public MainMemory Ram = new MainMemory();
         private bool _checkFlag;
-        private StreamReader _sr;
+        private int _currentProgramCardOwner;
+        private bool _dtaEnd;
         private String _ic = "00";
         private String _ir = String.Empty;
+        private int _jobId;
         private String _register = String.Empty;
         private int _serviceOperand;
-        private readonly Logger _logger = new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second + @"\" + "SimplOS.CPU.txt");
-        private bool _dtaEnd;
-        private int _currentProgramCardOwner;
-        private int _jobId;
+        private StreamReader _sr;
 
         public Processor()
         {
@@ -67,7 +70,7 @@ namespace SimplOS.Cpu
             _currentProgramCardOwner = programCardNumber;
             _jobId = jobId;
             _sr = sr;
-            var terminate = false;
+            bool terminate = false;
             while (!terminate)
             {
                 string op;
@@ -76,7 +79,7 @@ namespace SimplOS.Cpu
                 if (_ir == null)
                 {
                     _logger.LogE("Instruction Null, Error in program card, Halting CPU. ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId);
+                                 + _currentProgramCardOwner + " JobID -> " + _jobId);
                     break;
                 }
                 if (_ir.Length == 4)
@@ -87,7 +90,7 @@ namespace SimplOS.Cpu
                 else
                 {
                     _logger.LogE("Invalid Instruction -> " + _ir + "ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId);
+                                 + _currentProgramCardOwner + " JobID -> " + _jobId);
                     continue;
                 }
                 if (op.Contains("H"))
@@ -105,7 +108,8 @@ namespace SimplOS.Cpu
                         catch (Exception e)
                         {
                             _logger.LogE("Exception at GD -> ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" + e.StackTrace);
+                                         + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" +
+                                         e.StackTrace);
                         }
                         _logger.LogD("Service Interrupt Type 1");
                         MasterMode(1);
@@ -119,7 +123,8 @@ namespace SimplOS.Cpu
                         catch (Exception e)
                         {
                             _logger.LogE("Exception at PD -> ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" + e.StackTrace);
+                                         + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" +
+                                         e.StackTrace);
                         }
                         _logger.LogD("Service Interrupt Type 2");
                         MasterMode(2);
@@ -142,7 +147,8 @@ namespace SimplOS.Cpu
                         catch (Exception e)
                         {
                             _logger.LogE("Exception at CR -> ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" + e.StackTrace);
+                                         + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" +
+                                         e.StackTrace);
                         }
                         break;
 
@@ -157,7 +163,8 @@ namespace SimplOS.Cpu
                         catch (Exception e)
                         {
                             _logger.LogE("Exception at BT -> ProgramCardOwner -> "
-                        + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" + e.StackTrace);
+                                         + _currentProgramCardOwner + " JobID -> " + _jobId + "\n" + e.Message + "\n\n" +
+                                         e.StackTrace);
                         }
                         break;
 
@@ -188,7 +195,8 @@ namespace SimplOS.Cpu
                     }
                     else
                     {
-                        _logger.LogE("No More Data Available, ProgramCardOwner -> " + _currentProgramCardOwner + ", JobID -> " + _jobId);
+                        _logger.LogE("No More Data Available, ProgramCardOwner -> " + _currentProgramCardOwner +
+                                     ", JobID -> " + _jobId);
                         return;
                     }
                     if (line.Contains("$END"))
@@ -204,7 +212,7 @@ namespace SimplOS.Cpu
                     break;
 
                 case 3:
-                    _output.WriteLine("!----------------------------------------------!");
+                    _output.WriteLine("!--Program Card End--![Roll-" + _currentProgramCardOwner + " ,JobId-" + _jobId + "]");
                     _logger.LogD("CPU HALT");
                     break;
             }

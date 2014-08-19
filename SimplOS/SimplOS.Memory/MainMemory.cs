@@ -8,12 +8,15 @@ namespace SimplOS.Memory
     public class MainMemory
     {
         private const string AppendChar = " ";
+
+        private readonly Logger _logger =
+            new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" +
+                       DateTime.UtcNow.Second + @"\" + "SimplOS.Memory.txt");
+
         private readonly String[,] _memory = new String[100, 1];
-        readonly Logger _logger = new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second + @"\" + "SimplOS.Memory.txt");
 
         public MainMemory()
         {
-
             _logger.LogD("Start");
         }
 
@@ -24,11 +27,11 @@ namespace SimplOS.Memory
                 _logger.LogE("Index > 100");
                 return;
             }
-            index = index - (index % 10);
+            index = index - (index%10);
             _logger.LogD("GD at location " + index);
             data = CorrectString(data);
-            var instructions = Split(data, 4);
-            foreach (var word in instructions)
+            IEnumerable<string> instructions = Split(data, 4);
+            foreach (string word in instructions)
             {
                 StoreWord(index, word);
                 index++;
@@ -64,10 +67,10 @@ namespace SimplOS.Memory
                 _logger.LogE("Index > 100");
                 return null;
             }
-            index = index - (index % 10);
+            index = index - (index%10);
             _logger.LogD("PD from location " + index);
-            var op = String.Empty;
-            for (var i = index; i < index + 10; ++i)
+            string op = String.Empty;
+            for (int i = index; i < index + 10; ++i)
             {
                 op += _memory[i, 0];
             }
@@ -77,7 +80,7 @@ namespace SimplOS.Memory
         public void Flush()
         {
             _logger.LogD("Flushing Memory and Init it to NULL");
-            for (var i = 0; i < 100; ++i)
+            for (int i = 0; i < 100; ++i)
             {
                 _memory[i, 0] = null;
             }
@@ -88,8 +91,8 @@ namespace SimplOS.Memory
             _logger.LogD(@"Correcting input string length to 40 by appending " + AppendChar);
             if (input.Length != 40)
             {
-                var length = input.Length;
-                for (var i = 0; i < (40 - length); i++)
+                int length = input.Length;
+                for (int i = 0; i < (40 - length); i++)
                 {
                     input += AppendChar;
                 }
@@ -99,8 +102,8 @@ namespace SimplOS.Memory
 
         private static IEnumerable<string> Split(string input, int chunkSize)
         {
-            return Enumerable.Range(0, input.Length / chunkSize)
-                .Select(i => input.Substring(i * chunkSize, chunkSize));
+            return Enumerable.Range(0, input.Length/chunkSize)
+                .Select(i => input.Substring(i*chunkSize, chunkSize));
         }
     }
 }
