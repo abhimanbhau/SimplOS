@@ -8,7 +8,7 @@ namespace SimplOS.Log
         private readonly StreamWriter _writer;
         public Logger(string path)
         {
-            _writer = new StreamWriter(path) {AutoFlush = true};
+            _writer = new StreamWriter(path) {AutoFlush = true, NewLine= Environment.NewLine};
         }
 
         public void LogD(string d)

@@ -15,7 +15,7 @@ namespace SimplOS.Cpu
         private String _ir = String.Empty;
         private String _register = String.Empty;
         private int _serviceOperand;
-        private readonly Logger _logger = new Logger("Log/" + "SimplOS.CPU.txt");
+        private readonly Logger _logger = new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second + @"\" + "SimplOS.CPU.txt");
         private bool _dtaEnd;
         private int _currentProgramCardOwner;
         private int _jobId;

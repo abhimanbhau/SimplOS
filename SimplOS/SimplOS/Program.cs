@@ -24,11 +24,11 @@ namespace SimplOS
                 return;
             }
             var programCard = File.Exists("input.txt") ? "input.txt" : args[0];
-            if (!Directory.Exists("Log"))
+            if (!Directory.Exists(@"Log\" + DateTime.UtcNow.ToShortDateString() + "-"))
             {
-                Directory.CreateDirectory("Log");
+                Directory.CreateDirectory(@"Log\" + DateTime.Now.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second);
             }
-            var logger = new Logger("Log/" + "SimplOS.main.txt");
+            var logger = new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second + @"\" + "SimplOS.main.txt");
             var cpu = new Processor();
 
             var buffer = File.ReadAllLines(programCard);
@@ -47,7 +47,7 @@ namespace SimplOS
                         currentProgramCardOwner = Convert.ToInt16(currentLine.Substring(4, 2));
                         jobId = Convert.ToInt16(currentLine.Substring(6, 2));
                         logger.LogD("Processing Program Card - " + programCardNumber + " -Control -> " + "Roll Number: " +
-                            currentProgramCardOwner + ", Job-ID: " + jobId + " ,Number of Instructions: "
+                            currentProgramCardOwner + ", JobID: " + jobId + " ,No.ofInstructs: "
                             + currentLine.Substring(8, 2) + " ,Length of Data: " + currentLine.Substring(10, 2));
                         memoryIndex = 0;
                     }

@@ -9,7 +9,7 @@ namespace SimplOS.Memory
     {
         private const string AppendChar = " ";
         private readonly String[,] _memory = new String[100, 1];
-        readonly Logger _logger = new Logger("Log/" + "SimplOS.Memory.txt");
+        readonly Logger _logger = new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" + DateTime.UtcNow.Second + @"\" + "SimplOS.Memory.txt");
 
         public MainMemory()
         {
