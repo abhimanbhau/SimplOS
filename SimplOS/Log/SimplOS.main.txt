@@ -1,0 +1,63 @@
+[Verbose]  Start @ 12/28/2017 2:25:46 AM
+[Verbose]  Reading Program Card From -> input.txt @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 1 -Control -> Roll Number: 43, JobID: 0 ,No.ofInstructs: 00 ,Length of Data: 15 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 1 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 1 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 2 -Control -> Roll Number: 44, JobID: 0 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 2 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 2 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 3 -Control -> Roll Number: 44, JobID: 1 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 3 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 3 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 4 -Control -> Roll Number: 54, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 4 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 4 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 5 -Control -> Roll Number: 54, JobID: 1 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 5 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 6 -Control -> Roll Number: 55, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 6 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 6 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 7 -Control -> Roll Number: 55, JobID: 1 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 7 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 7 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 8 -Control -> Roll Number: 56, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 8 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 8 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 9 -Control -> Roll Number: 41, JobID: 2 ,No.ofInstructs: 00 ,Length of Data: 15 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 9 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 10 -Control -> Roll Number: 51, JobID: 0 ,No.ofInstructs: 00 ,Length of Data: 50 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 10 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 10 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 11 -Control -> Roll Number: 51, JobID: 1 ,No.ofInstructs: 00 ,Length of Data: 25 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 11 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 11 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 12 -Control -> Roll Number: 4, JobID: 60 ,No.ofInstructs: 01 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 12 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 13 -Control -> Roll Number: 4, JobID: 60 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 13 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 13 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 14 -Control -> Roll Number: 48, JobID: 0 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 14 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 14 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 15 -Control -> Roll Number: 48, JobID: 1 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 15 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 15 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 16 -Control -> Roll Number: 47, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 16 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 16 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 17 -Control -> Roll Number: 47, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 17 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 17 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 18 -Control -> Roll Number: 50, JobID: 0 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 18 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 19 -Control -> Roll Number: 50, JobID: 1 ,No.ofInstructs: 11 ,Length of Data: 11 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 19 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 20 -Control -> Roll Number: 39, JobID: 0 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 20 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 20 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 21 -Control -> Roll Number: 39, JobID: 1 ,No.ofInstructs: 00 ,Length of Data: 00 @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 21 -Data @ 12/28/2017 2:25:46 AM
+[Verbose]  Processing Program Card - 21 -End @ 12/28/2017 2:25:46 AM
+[Verbose]  End @ 12/28/2017 2:25:46 AM
+[Verbose]  21 Program cards processed in 207 MilliSeconds @ 12/28/2017 2:25:46 AM
+[Verbose]  9.85714285714286 MilliSeconds/Card @ 12/28/2017 2:25:46 AM

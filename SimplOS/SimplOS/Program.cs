@@ -23,14 +23,12 @@ namespace SimplOS
                 return;
             }
             string programCard = File.Exists("input.txt") ? "input.txt" : args[0];
-            if (!Directory.Exists(@"Log\" + DateTime.UtcNow.ToShortDateString() + "-"))
+            if (!Directory.Exists(@"Log"))
             {
-                Directory.CreateDirectory(@"Log\" + DateTime.Now.ToShortDateString() + "-" + DateTime.UtcNow.Minute +
-                                          "-" + DateTime.UtcNow.Second);
+                Directory.CreateDirectory(@"Log");
             }
             var logger =
-                new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" +
-                           DateTime.UtcNow.Second + @"\" + "SimplOS.main.txt");
+                new Logger("Log/SimplOS.main.txt");
             var cpu = new Processor();
 
             logger.LogD("Start");

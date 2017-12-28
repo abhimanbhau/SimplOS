@@ -8,8 +8,7 @@ namespace SimplOS.Cpu
     public class Processor
     {
         private readonly Logger _logger =
-            new Logger("Log/" + DateTime.UtcNow.ToShortDateString() + "-" + DateTime.UtcNow.Minute + "-" +
-                       DateTime.UtcNow.Second + @"\" + "SimplOS.CPU.txt");
+            new Logger("Log/SimplOS.CPU.txt");
 
         private readonly StreamWriter _output = new StreamWriter("output.txt");
         public MainMemory Ram = new MainMemory();
